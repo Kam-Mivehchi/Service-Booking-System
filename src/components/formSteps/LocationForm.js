@@ -4,7 +4,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 import styled from 'styled-components'
 
 // const StyledHeader = styled(Card.Title)`
