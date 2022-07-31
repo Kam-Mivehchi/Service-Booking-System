@@ -7,27 +7,27 @@ import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card';
 import styled from 'styled-components'
 
-const StyledHeader = styled(Card.Title)`
-    font-weight:bold;
-    margin: 1rem auto 2rem auto ;
-    font-size:1.5rem;
-`
+// const StyledHeader = styled(Card.Title)`
+//     font-weight:bold;
+//     margin: 1rem auto 2rem auto ;
+//     font-size:1.5rem;
+// `
 const StyledButton = styled(Button)`
     font-weight:bold;
     padding:4px 30px;
     border-radius:30px;
 
 `
-const content = {
-    title: "Enter Your Address",
-    subtitle: "Describe what you want picked up and provide the approximate weight",
-    disclaimer: "Use this area to give pickup instructions and window Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ",
-    recurring: {
-        title: "Setup Recurring pickups",
-        desc: "benefit details Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
-        freq: [["One Time", 1], ['Weekly', 7], ["Monthly", 30]]
-    }
-}
+// const content = {
+//     title: "Enter Your Address",
+//     subtitle: "Describe what you want picked up and provide the approximate weight",
+//     disclaimer: "Use this area to give pickup instructions and window Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ",
+//     recurring: {
+//         title: "Setup Recurring pickups",
+//         desc: "benefit details Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+//         freq: [["One Time", 1], ['Weekly', 7], ["Monthly", 30]]
+//     }
+// }
 const locationForm = () => {
     return (
         <>

@@ -1,24 +1,24 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Col from 'react-bootstrap/Col';
+// import ButtonGroup from 'react-bootstrap/ButtonGroup';
+// import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+// import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card'
 import styled from 'styled-components'
-import InputGroup from 'react-bootstrap/InputGroup';
+// import InputGroup from 'react-bootstrap/InputGroup';
 import Location from './LocationForm'
 const StyledHeader = styled(Card.Title)`
     font-weight:bold;
     margin: 1rem auto 2rem auto ;
     font-size:1.5rem;
 `
-const StyledButton = styled(Button)`
-    font-weight:bold;
-    padding:4px 30px;
-    border-radius:30px;
+// const StyledButton = styled(Button)`
+//     font-weight:bold;
+//     padding:4px 30px;
+//     border-radius:30px;
 
-`
+// `
 
 const content = {
     title: "Pickup Date and Time",

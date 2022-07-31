@@ -1,8 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Col from 'react-bootstrap/Col';
+// import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+// import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card'
 import styled from 'styled-components'
 import Container from 'react-bootstrap/Container';

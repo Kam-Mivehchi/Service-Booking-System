@@ -1,5 +1,5 @@
 import React from 'react'
-import LocationForm from './formSteps/LocationForm'
+// import LocationForm from './formSteps/LocationForm'
 import ServiceAndRadiusCheck from './formSteps/ServiceAndRadiusCheck'
 import DateAndTime from './formSteps/DateAndTime'
 import Container from 'react-bootstrap/Container'

@@ -32,7 +32,7 @@ const StyledHeader = styled(Card.Title)`
 `
 
 const ServiceAndRadiusCheck = () => {
-    const [checked, setChecked] = useState(false);
+    // const [checked, setChecked] = useState(false);
     const [radioValue, setRadioValue] = useState('1');
     const [startingPrice, setStartingPrice] = useState(100)
     const [price, setPrice] = useState(startingPrice)
