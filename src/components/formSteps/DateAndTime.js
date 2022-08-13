@@ -36,6 +36,7 @@ const DateAndTime = () => {
             <StyledHeader>{content.title}</StyledHeader>
             <Form>
                 <Card.Title as="h6" style={{ marginTop: '1rem', textAlign: 'start', fontWeight: 'bold' }}>
+
                     {content.subtitle}
                 </Card.Title>
                 <Card.Text className="text-start">
