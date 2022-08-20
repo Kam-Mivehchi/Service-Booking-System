@@ -1,11 +1,13 @@
-import React from 'react'
+import { useState } from 'react'
 // import Button from 'react-bootstrap/Button';
 // import ButtonGroup from 'react-bootstrap/ButtonGroup';
 // import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+
 // import Row from 'react-bootstrap/Row';
 import Card from 'react-bootstrap/Card'
 import styled from 'styled-components'
+
 // import InputGroup from 'react-bootstrap/InputGroup';
 import Location from './LocationForm'
 const StyledHeader = styled(Card.Title)`
@@ -30,7 +32,31 @@ const content = {
         freq: [["One Time", 1], ['Weekly', 7], ["Monthly", 30]]
     }
 }
-const DateAndTime = () => {
+const DateAndTime = (props) => {
+    const [order, setOrder] = useState()
+
+
+    function handleDate(e) {
+        setOrder({
+            ...order,
+            date: e.target.value
+        })
+
+        return order
+    }
+    function handleTime(e) {
+        setOrder({
+            ...order,
+            time: e.target.value
+        })
+
+
+        return order
+    }
+
+
+
+
     return (
         <Card style={{ padding: '1rem' }}>
             <StyledHeader>{content.title}</StyledHeader>
@@ -43,10 +69,10 @@ const DateAndTime = () => {
                     {content.disclaimer}
                 </Card.Text>
                 <Form.Label htmlFor="Date">Date</Form.Label>
-                <Form.Control type='date' id="Date" required />
+                <Form.Control type='date' onChange={handleDate} id="Date" required />
 
                 <Form.Label htmlFor="Time">Time:</Form.Label>
-                <Form.Control type='time' id="Time" min="09:00" max="18:00" required />
+                <Form.Control type='time' id="Time" onChange={handleTime} min="09:00" max="18:00" required />
 
                 {/* <Card.Title as="h6" style={{ marginTop: '1rem', textAlign: 'start', fontWeight: 'bold' }}>
                     {content.recurring.title}
@@ -70,7 +96,7 @@ const DateAndTime = () => {
                 </ButtonGroup> */}
 
             </Form>
-            <Location />
+            <Location zipcode={props.zipcode} newOrder={order} />
         </Card>
 
     )

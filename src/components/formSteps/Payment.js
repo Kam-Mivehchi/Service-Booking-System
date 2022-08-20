@@ -60,10 +60,10 @@ const Payment = () => {
 
 
                 <ButtonGroup style={{ width: '80%', position: 'relative', left: "50%", transform: 'translateX(-50%)', marginTop: '1rem' }}>
-                    <StyledButton variant="outline-success" type="submit">Back</StyledButton>
-                    <StyledButton variant="success">Next</StyledButton>
+                    <StyledButton variant="outline-success" >Back</StyledButton>
+                    <StyledButton type="submit" variant="success">Next</StyledButton>
                 </ButtonGroup>
-                <Pay />
+                {/* <Pay /> */}
             </Form>
         </Card>
     )

@@ -8,28 +8,18 @@ import Summary from './formSteps/Summary'
 import Payment from './formSteps/Payment'
 const BookingForm = () => {
 
-    let checkZip = (e) => {
-        e.preventDefault()
-        console.log(e.target.value)
 
-    }
     return (
         <Container>
-            <form action="http://localhost:3005/api/payment/create-checkout-session" method="POST" class="">
-                <label for="">Zip Code</label>
-                <input type="text" id="zipcode" name="zip" />
-
-                <button className="bg-primary" type="button" formaction="http://localhost:3005/api/orders/checkRange" method="POST" >Check Radius</button>
-
-
-                <button type="submit">Checkout</button>
-            </form>
             <ServiceAndRadiusCheck />
-            <DateAndTime />
+            {/* <DateAndTime /> */}
             <TaskDescription />
             {/* <LocationForm /> */}
             <Summary />
             <Payment />
+            {/* <form action="http://localhost:3005/api/payment/create-checkout-session" method="POST" class="">
+                <button type="submit">Checkout</button>
+            </form> */}
         </Container>
     )
 }
