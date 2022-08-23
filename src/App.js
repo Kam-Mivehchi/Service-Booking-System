@@ -5,6 +5,10 @@ import Footer from './components/Footer'
 import SecondCTA from './components/SecondCTA'
 import Top3 from './components/Top3'
 import BookingForm from './components/BookingForm'
+import BookNow from './components/BookNow'
+
+import Card from 'react-bootstrap/Card';
+
 function App() {
   return (
     <>
@@ -15,7 +19,11 @@ function App() {
         <SecondCTA />
       </div>
       <Top3 />
-      <BookingForm />
+      <Card style={{ padding: '1rem' }}>
+
+        <BookNow />
+      </Card>
+      {/* <BookingForm /> */}
       <Footer />
     </>
   );

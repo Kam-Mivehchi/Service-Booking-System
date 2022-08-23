@@ -1,22 +1,25 @@
 import React from 'react'
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 const Price = (props) => {
     return (
         <>
-            <Row className="justify-content-between mx-auto gap-1 ">
-                <Col xs={5}>
-                    <Row>
 
+            <Container className="text-center">
+                <Col xs={12} className={""}>
+
+                    <p>
                         Service Starts at
-                    </Row>
-                    {/* based on the users distance we need to change the price */}
-                    <Row as='h1'>
+                    </p>
+                    <p className="h2 mt-0" >
                         ${props.price}
-                    </Row>
-                </Col>
+                    </p>
 
-            </Row>
+
+                </Col>
+            </Container>
+
+
         </>
     )
 }
