@@ -24,10 +24,13 @@ const Zipcode = ({ nextStep, handleChange, orderInfo, handlePrice }) => {
 
    const inputEl = useRef(null);
 
-   const Proceed = useCallback(() => { nextStep() }, [])
+   // const Proceed = useCallback(() => { nextStep() }, [])
 
    useEffect(() => {
       console.log(this)
+      function Proceed() {
+         nextStep()
+      }
       if (zipStatus === true) {
          setTimeout(() => {
             // Proceed();
