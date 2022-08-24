@@ -151,6 +151,7 @@ export default class BookNow extends Component {
                      orderInfo={order} />
                </>
             )
+         default:
       }
 
 

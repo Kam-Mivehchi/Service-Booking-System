@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect, useCallback } from 'react'
 
 
 import Form from 'react-bootstrap/Form';
@@ -24,15 +24,15 @@ const Zipcode = ({ nextStep, handleChange, orderInfo, handlePrice }) => {
 
    const inputEl = useRef(null);
 
-
+   const Proceed = useCallback(() => { nextStep() }, [])
 
    useEffect(() => {
-
+      console.log(this)
       if (zipStatus === true) {
          setTimeout(() => {
             // Proceed();
 
-            nextStep();
+            Proceed();
          }, 1000)
       }
 
