@@ -27,7 +27,7 @@ const Summary = ({ nextStep, prevStep, userInfo, orderInfo }) => {
             <ListGroup variant="flush" className="d-flex flex-row justify-content-around">
                <ListGroup.Item className="text-center border-0">
                   <h2>
-                     {orderInfo.weight == 1 ? "<1 ton" : `${orderInfo.weight} tons`}
+                     {orderInfo.weight === 1 ? "<1 ton" : `${orderInfo.weight} tons`}
                   </h2>
                   <small>Pick Up Size</small>
 

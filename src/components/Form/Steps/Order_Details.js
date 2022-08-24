@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 
-const Order_Details = ({ prevStep, nextStep, handleChange, userInfo, orderInfo, handlePrice }) => {
+const Order_Details = ({ prevStep, nextStep, handleChange, orderInfo, handlePrice }) => {
 
 
    const Proceed = e => {

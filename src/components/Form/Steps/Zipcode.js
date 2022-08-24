@@ -27,8 +27,8 @@ const Zipcode = ({ nextStep, handleChange, orderInfo, handlePrice }) => {
 
 
    useEffect(() => {
-      console.log(orderInfo)
-      if (zipStatus == true) {
+
+      if (zipStatus === true) {
          setTimeout(() => {
             // Proceed();
 
@@ -48,8 +48,8 @@ const Zipcode = ({ nextStep, handleChange, orderInfo, handlePrice }) => {
          return response
       }).then(function (data) {
          // console.log(data.data.starting_price)
-         console.log(data)
-         console.log(data.data.isValid)
+         // console.log(data)
+         // console.log(data.data.isValid)
          setZipStatus(data.data.isValid)
          handlePrice(data.data.starting_price)
 
@@ -66,11 +66,11 @@ const Zipcode = ({ nextStep, handleChange, orderInfo, handlePrice }) => {
 
             <Form.Label>Zip Code
                <Form.Control type="text" ref={inputEl} minLength="5" maxLength="5" pattern="[0-9]*" placeholder="Enter Zipcode" value={orderInfo.zip} onChange={handleChange('zip')} defaultValue={orderInfo.zip} required />
-               {zipStatus == false && (<small class="text-danger"> Sorry, looks like you are out of range <br></br> We service LA, OC, Riverside, and San Berarndino</small>)}
-               {zipStatus == true && (<h4 class="text-success "> Your in the area, moving on to contact info</h4>)}
+               {zipStatus === false && (<small class="text-danger"> Sorry, looks like you are out of range <br></br> We service LA, OC, Riverside, and San Berarndino</small>)}
+               {zipStatus === true && (<h4 class="text-success "> Your in the area, moving on to contact info</h4>)}
             </Form.Label>
             <div className="w-50 text-center">
-               <Button onClick={checkRange} type="submit" variant={zipStatus == false ? "danger" : "success"} >Check Range</Button>
+               <Button onClick={checkRange} type="submit" variant={zipStatus === false ? "danger" : "success"} >Check Range</Button>
             </div>
 
          </Form>

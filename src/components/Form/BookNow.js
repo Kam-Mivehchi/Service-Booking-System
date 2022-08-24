@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import Zipcode from './Steps/Zipcode'
-import Personal_Details from './Steps/Personal_Details'
-import Order_Details from './Steps/Order_Details'
+import PersonalDetails from './Steps/Personal_Details'
+import OrderDetails from './Steps/Order_Details'
 import Summary from './Steps/Summary'
 import Stripe from '../Utils/Stripe_Checkout'
 import Success from './Steps/Success'
-import Price_Breakdown from './Price';
+import PriceBreakdown from './Price';
 import styled from 'styled-components'
 import Card from 'react-bootstrap/Card';
 
@@ -27,12 +27,11 @@ export default class BookNow extends Component {
       date: '',
       time: '',
       weight: 1,
-      price: '',
+      price: 350,
       address: '',
       city: '',
       state: '',
       payment_status: '',
-      price: 350,
    }
 
    prevStep = () => {
@@ -68,7 +67,7 @@ export default class BookNow extends Component {
 
                   <StyledTitle>Enter Zip Code</StyledTitle>
 
-                  <Price_Breakdown price={order.price} />
+                  <PriceBreakdown price={order.price} />
 
                   <Zipcode
                      nextStep={this.nextStep}
@@ -84,9 +83,9 @@ export default class BookNow extends Component {
                <>
                   <StyledTitle>Contact Information</StyledTitle>
 
-                  <Price_Breakdown price={order.price} />
+                  <PriceBreakdown price={order.price} />
 
-                  <Personal_Details
+                  <PersonalDetails
                      prevStep={this.prevStep}
                      nextStep={this.nextStep}
                      handleChange={this.handleChange}
@@ -102,9 +101,9 @@ export default class BookNow extends Component {
                <>
                   <StyledTitle>Pick Up Details</StyledTitle>
 
-                  <Price_Breakdown price={order.price} />
+                  <PriceBreakdown price={order.price} />
 
-                  <Order_Details
+                  <OrderDetails
                      prevStep={this.prevStep}
                      nextStep={this.nextStep}
                      handleChange={this.handleChange}
