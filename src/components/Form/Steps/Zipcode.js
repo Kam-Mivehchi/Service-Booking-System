@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react'
+import React, { useRef, useState, } from 'react'
 
 
 import Form from 'react-bootstrap/Form';
@@ -26,13 +26,10 @@ const Zipcode = ({ nextStep, handleChange, orderInfo, handlePrice }) => {
 
    // const Proceed = useCallback(() => { nextStep() }, [])
 
-   function Proceed() {
-      nextStep()
-   }
-   useEffect(() => {
-      console.log(this)
+   // function Proceed() {
+   //    nextStep()
+   // }
 
-   }, [zipStatus])
    let checkRange = (e) => {
       console.log(orderInfo)
       e.preventDefault()
