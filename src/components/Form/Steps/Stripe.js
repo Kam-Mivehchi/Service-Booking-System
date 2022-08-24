@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import "./App.css";
+let urlChoice = { prod: 'https://back-end4.herokuapp.com', dev: 'http://localhost:3005' }
 
 const ProductDisplay = () => (
    <section>
@@ -13,7 +14,7 @@ const ProductDisplay = () => (
             <h5>$20.00</h5>
          </div>
       </div>
-      <form action="http://localhost:3005/api/payment/create-checkout-session" method="POST">
+      <form action={`${urlChoice.prod}/api/payment/create-checkout-session`} method="POST">
          <button type="submit">
             Checkout
          </button>
