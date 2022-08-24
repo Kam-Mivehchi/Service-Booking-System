@@ -12,10 +12,10 @@ function App() {
   return (
     <>
       <Navigation />
-      <div style={{ minHeight: '100vh' }}>
-        <Hero />
-        <SecondCTA />
-      </div>
+      {/* <div style={{ minHeight: '100vh' }}> */}
+      <Hero />
+      <SecondCTA />
+      {/* </div> */}
       <Card style={{ padding: '1rem' }}>
 
         <BookNow />
