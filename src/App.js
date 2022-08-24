@@ -1,11 +1,10 @@
 import './App.css';
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import Footer from './components/Footer'
-import SecondCTA from './components/SecondCTA'
-import Top3 from './components/Top3'
-import BookingForm from './components/BookingForm'
-import BookNow from './components/BookNow'
+import Navigation from './components/Utils/Navigation';
+import Hero from './pages/Home/Hero';
+import Footer from './components/Utils/Footer'
+import SecondCTA from './pages/Home/SecondCTA'
+import Top3 from './pages/Home/Top3'
+import BookNow from './components/Form/BookNow'
 
 import Card from 'react-bootstrap/Card';
 //test
@@ -14,15 +13,14 @@ function App() {
     <>
       <Navigation />
       <div style={{ minHeight: '100vh' }}>
-
         <Hero />
         <SecondCTA />
       </div>
-      <Top3 />
       <Card style={{ padding: '1rem' }}>
 
         <BookNow />
       </Card>
+      <Top3 />
       {/* <BookingForm /> */}
       <Footer />
     </>

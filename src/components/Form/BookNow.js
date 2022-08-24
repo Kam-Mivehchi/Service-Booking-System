@@ -3,14 +3,12 @@ import Zipcode from './Steps/Zipcode'
 import Personal_Details from './Steps/Personal_Details'
 import Order_Details from './Steps/Order_Details'
 import Summary from './Steps/Summary'
-import Stripe from './formSteps/pay'
+import Stripe from '../Utils/Stripe_Checkout'
 import Success from './Steps/Success'
-import Price_Breakdown from './formSteps/Price';
+import Price_Breakdown from './Price';
 import styled from 'styled-components'
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-import Col from 'react-bootstrap/Col';
-import Pay from './formSteps/pay.js'
+
 const StyledTitle = styled(Card.Title)`
 font-weight:bold;
 margin: 1rem auto 2rem auto ;
@@ -67,7 +65,7 @@ export default class BookNow extends Component {
          case 1:
             return (
                <>
-                  <Pay />
+
                   <StyledTitle>Enter Zip Code</StyledTitle>
 
                   <Price_Breakdown price={order.price} />

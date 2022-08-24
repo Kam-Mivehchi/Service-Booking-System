@@ -1,18 +1,12 @@
 
-import React, { useState, useEffect } from 'react'
-
-import Price_Breakdown from '../formSteps/Price';
-import Container from 'react-bootstrap/Container';
+import React from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 
 const Order_Details = ({ prevStep, nextStep, handleChange, userInfo, orderInfo, handlePrice }) => {
 
-   const [sp, setSP] = useState()
-   useEffect(() => {
-      setSP({ ...orderInfo.price })
-   }, [])
+
    const Proceed = e => {
       e.preventDefault();
       nextStep();
@@ -44,9 +38,7 @@ const Order_Details = ({ prevStep, nextStep, handleChange, userInfo, orderInfo, 
       } else {
          handlePrice(weight_val < 380 ? 350 : 380)
       }
-      console.log(orderInfo.price)
-      // console.log(parseInt(e.target.value) * orderInfo.price)
-      // handlePrice(orderInfo.price*e.target.v)
+
    }
    return (
       <>

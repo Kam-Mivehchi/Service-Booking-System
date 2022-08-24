@@ -1,11 +1,11 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
 import ListGroup from 'react-bootstrap/ListGroup';
 import dayjs from 'dayjs'
-import Pay from '../formSteps/pay'
 import Stripe from './Stripe'
+
+
 const Summary = ({ nextStep, prevStep, userInfo, orderInfo }) => {
    const Proceed = e => {
       e.preventDefault();

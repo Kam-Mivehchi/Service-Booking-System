@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
-import Price_Breakdown from '../formSteps/Price';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+
+
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -22,16 +21,14 @@ let axiosConfig = {
 
 const Zipcode = ({ nextStep, handleChange, orderInfo, handlePrice }) => {
    const [zipStatus, setZipStatus] = useState()
-   const [success, setSuccess] = useState(false)
+
    const inputEl = useRef(null);
-   const nextButton = useRef(null)
+
 
 
    useEffect(() => {
       console.log(orderInfo)
       if (zipStatus == true) {
-         setSuccess(true)
-
          setTimeout(() => {
             // Proceed();
 
@@ -78,7 +75,6 @@ const Zipcode = ({ nextStep, handleChange, orderInfo, handlePrice }) => {
 
          </Form>
 
-         {/* <Button onClick={Proceed} ref={nextButton} type="submit" disabled={!zipStatus} class={zipStatus && ("hidden")}>Book a time!</Button> */}
       </>
    )
 }

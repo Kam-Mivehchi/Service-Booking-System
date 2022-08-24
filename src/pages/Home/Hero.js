@@ -1,8 +1,7 @@
 import React from 'react'
-
 import styled from 'styled-components'
 import Card from 'react-bootstrap/Card';
-import bgImage from "../assets/HeroImg.jpg"
+import bgImage from "../../assets/HeroImg.jpg"
 import Button from 'react-bootstrap/Button'
 
 const Overlay = styled(Card.ImgOverlay)`
