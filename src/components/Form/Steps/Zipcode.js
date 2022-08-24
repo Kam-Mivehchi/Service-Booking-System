@@ -7,8 +7,9 @@ import Button from 'react-bootstrap/Button';
 
 import axios from 'axios';
 
+let urlChoice = { prod: 'https://back-end4.herokuapp.com', dev: 'http://localhost:3005' }
 let axiosConfig = {
-   baseURL: 'http://localhost:3005/api',
+   baseURL: `${urlChoice.prod}/api`,
    headers: {
       'Content-Type': 'application/json',
       "Access-Control-Allow-Origin": "*",
@@ -41,7 +42,7 @@ const Zipcode = ({ nextStep, handleChange, orderInfo, handlePrice }) => {
          return response
       }).then(function (data) {
          // console.log(data.data.starting_price)
-         // console.log(data)
+         console.log(data)
          // console.log(data.data.isValid)
          handlePrice(data.data.starting_price)
          setZipStatus(data.data.isValid)
