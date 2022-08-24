@@ -26,18 +26,11 @@ const Zipcode = ({ nextStep, handleChange, orderInfo, handlePrice }) => {
 
    // const Proceed = useCallback(() => { nextStep() }, [])
 
+   function Proceed() {
+      nextStep()
+   }
    useEffect(() => {
       console.log(this)
-      function Proceed() {
-         nextStep()
-      }
-      if (zipStatus === true) {
-         setTimeout(() => {
-            // Proceed();
-
-            Proceed();
-         }, 1000)
-      }
 
    }, [zipStatus])
    let checkRange = (e) => {
@@ -53,8 +46,19 @@ const Zipcode = ({ nextStep, handleChange, orderInfo, handlePrice }) => {
          // console.log(data.data.starting_price)
          // console.log(data)
          // console.log(data.data.isValid)
-         setZipStatus(data.data.isValid)
          handlePrice(data.data.starting_price)
+         setZipStatus(data.data.isValid)
+         if (data.data.isValid === true) {
+            setTimeout(() => {
+               // Proceed();
+
+               nextStep()
+            }, 1000)
+         }
+
+         else {
+            setZipStatus(false)
+         }
 
          console.log(zipStatus)
       }).catch(error => console.log(error))
