@@ -1,21 +1,87 @@
-import React from 'react'
+import { useState } from 'react'
 import Container from 'react-bootstrap/Container';
-import Zipcode from './Steps/Zipcode';
-import PersonalDetails from './Steps/Personal_Details'
-import OrderDetails from './Steps/Order_Details'
+import Zipcode from './Stepper/Zipcode';
+import PersonalDetails from './Stepper/Personal_Details';
+import OrderDetails from './Stepper/Order_Details';
+import Summary from './Stepper/Summary';
+import Stripe from './Stepper/Stripe';
+import Success from './Stepper/Success';
+import Price from './Stepper/Price';
+import { CheckRange } from '../Utils/api'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
 const Appointment = () => {
-   const [page, setPage] = useState(0)
+   const [page, setPage] = useState(0);
+
+   const [formData, setFormData] = useState({
+      zipcode: '',
+      phone: '',
+      firstName: '',
+      lastName: '',
+      email: '',
+      customer_id: '',
+      date: '',
+      time: '',
+      weight: 1,
+      price: 350,
+      address: '',
+      city: '',
+      state: '',
+      payment_status: '',
+      order_id: ''
+   })
+
+   const [onSubmit, setOnSubmit] = useState(() => { })
+   // const handleSubmit = (e) => {
+   //    e.preventDefault()
+   //    switch (page) {
+   //       case 0:
+   //          try {
+   //             const range = CheckRange(formData.zipcode)
+
+   //             setPage(page + 1)
+   //             return range(formData.zipcode);
+   //          } catch (error) {
+
+   //          }
+
+   //    }
+   // }
+
    const renderComponent = () => {
       switch (page) {
          case 0:
+            return <Zipcode formData={formData} setFormData={setFormData} page={page} setPage={setPage} />;
+         case 1:
+            return <PersonalDetails formData={formData} setFormData={setFormData} page={page} setPage={setPage} />
+         case 2:
+            return <OrderDetails formData={formData} setFormData={setFormData} page={page} setPage={setPage} />
+         // case 3:
+         //    return <Summary formData={formData} setFormData={setFormData} />;
+         case 3:
+            return <Stripe formData={formData} setFormData={setFormData} page={page} setPage={setPage} />
+         case 4:
+            return <Success formData={formData} setFormData={setFormData} />
 
+         default:
+            return <Zipcode formData={formData} setFormData={setFormData} />;
       }
    }
 
    return (
-      <Container>
+      <Container fluid="md">
+         <Price price={formData.price} />
 
-      </Container>
+
+
+         {renderComponent()}
+         {console.log(formData)}
+         <Button onClick={() => setPage(page - 1)} className={`${page === 0 || page > 3 ? "hidden" : ""}`}>{page !== 0 && page < 4 ? "Prev" : ""}</Button>
+         {/* <Button type="submit" className={`${page > 2 ? "hidden" : ""}`}>Next</Button> */}
+
+      </Container >
+
    )
 }
 
