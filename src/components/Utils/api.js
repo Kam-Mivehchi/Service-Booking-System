@@ -1,4 +1,3 @@
-import axios from 'axios';
 
 let urlChoice = { prod: 'https://back-end4.herokuapp.com', dev: 'http://localhost:3005' }
 export let axiosConfig = {
