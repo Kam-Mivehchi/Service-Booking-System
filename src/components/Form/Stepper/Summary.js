@@ -1,9 +1,9 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+
 import ListGroup from 'react-bootstrap/ListGroup';
 import dayjs from 'dayjs'
-import Stripe from './Stripe'
+
 
 
 const Summary = ({ formData }) => { //{ nextStep, prevStep, userInfo, formData }

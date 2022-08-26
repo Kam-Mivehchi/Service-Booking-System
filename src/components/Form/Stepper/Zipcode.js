@@ -1,4 +1,4 @@
-import React, { useRef, useState, } from 'react'
+import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -10,7 +10,7 @@ const Zipcode = ({ formData, setFormData, setPage, page }) => {
    const [valid, setValid] = useState(false)
    const CheckRange = async (e) => {
       e.preventDefault();
-      console.log(formData.zipcode)
+
       try {
          const response = await axios.post('/checkRange', {
             zipcode: formData.zipcode,
@@ -26,7 +26,7 @@ const Zipcode = ({ formData, setFormData, setPage, page }) => {
             Your in luck, tell us a little about yourself
          </small>)
          setTimeout(() => setPage(page + 1), 1500)
-         // setPage(page + 1)
+
 
       } catch (err) {
 

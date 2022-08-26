@@ -3,13 +3,10 @@ import Container from 'react-bootstrap/Container';
 import Zipcode from './Stepper/Zipcode';
 import PersonalDetails from './Stepper/Personal_Details';
 import OrderDetails from './Stepper/Order_Details';
-import Summary from './Stepper/Summary';
 import Stripe from './Stepper/Stripe';
 import Success from './Stepper/Success';
 import Price from './Stepper/Price';
-import { CheckRange } from '../Utils/api'
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 
 const Appointment = () => {
    const [page, setPage] = useState(0);
