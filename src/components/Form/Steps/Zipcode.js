@@ -3,7 +3,7 @@ import React, { useRef, useState, } from 'react'
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
+import CheckRange from '../../Utils/api'
 
 import axios from 'axios';
 
