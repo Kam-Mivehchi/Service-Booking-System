@@ -29,7 +29,7 @@ const Appointment = () => {
       order_id: ''
    })
 
-   const [onSubmit, setOnSubmit] = useState(() => { })
+   // const [onSubmit, setOnSubmit] = useState(() => { })
    // const handleSubmit = (e) => {
    //    e.preventDefault()
    //    switch (page) {
