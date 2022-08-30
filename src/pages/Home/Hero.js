@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Card from 'react-bootstrap/Card';
 import bgImage from "../../assets/HeroImg.jpg"
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
 
 const Overlay = styled(Card.ImgOverlay)`
     background-color:	rgb(0,0,0,.50);
@@ -20,12 +20,12 @@ const Title = styled(Card.ImgOverlay)`
     color:white;
 
 `
-const StyledButton = styled(Button)`
-    font-weight:bold;
-    padding:4px 30px;
-    border-radius:30px;
+// const StyledButton = styled(Button)`
+//     font-weight:bold;
+//     padding:4px 30px;
+//     border-radius:30px;
 
-`
+// `
 const content = {
     title: "PB&J Dumpage",
     tagline: "Big or Small, We Haul it All",
