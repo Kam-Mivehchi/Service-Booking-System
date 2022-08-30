@@ -5,28 +5,38 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { axiosConfig } from '../../Utils/api'
+import Spinner from 'react-bootstrap/Spinner';
+
 const Zipcode = ({ formData, setFormData, setPage, page }) => {
-   const [feedBack, setFeedBack] = useState(<small>Enter your zipcode to check if you are in our service area</small>)
-   const [valid, setValid] = useState(false)
+   const [feedBack, setFeedBack] = useState(<small className="text-secondary ">Enter your zipcode to check if you are in our service area</small>)
+   const [valid, setValid] = useState(false);
+   const [loading, setLoading] = useState(false);
    const CheckRange = async (e) => {
       e.preventDefault();
 
       try {
-         const response = await axios.post('/checkRange', {
+         setLoading(true)
+         const response = await axios.post('/price', {
             zipcode: formData.zipcode,
+            weight: formData.weight
          },
             axiosConfig
          )
 
-         if (response.data.isValid === false) {
-            throw new Error("out of Range")
-         }
+         // if (response.data.alid === false) {
+         //    throw new Error("out of Range")
+         // }
+         console.log(response)
+         setFormData({
+            ...formData,
+            price: response.data
+         })
          setValid(true)
-         setFeedBack(<small className="text-success">
-            Your in luck, tell us a little about yourself
+         setFeedBack(<small className="text-success ">
+            Your in Range! Tell us a little about yourself
          </small>)
-         setTimeout(() => setPage(page + 1), 1500)
-
+         setTimeout(() => setPage(page + 1), 1000)
+         // setPage(page + 1)
 
       } catch (err) {
 
@@ -35,30 +45,45 @@ const Zipcode = ({ formData, setFormData, setPage, page }) => {
             Sorry looks like your out of our range
          </small>)
          return err;
+      } finally {
+
+         setLoading(false)
       }
 
 
    }
    return (
-      <Row >
 
-         <Form onSubmit={CheckRange} >
-            <Col md={12}>
+      <Form onSubmit={CheckRange} className="d-flex flex-column align-items-center">
 
-               <Form.Label onChange={(e) => setFormData({
+         <Col md={3} className="d-flex justify-content-center">
+
+            <Form.Label
+               className="mx-auto"
+            >
+               Zipcode
+               <Form.Control onChange={(e) => setFormData({
                   ...formData,
                   zipcode: e.target.value
                })}
                   value={formData.zipcode}
-               >
-                  Zipcode
-                  <Form.Control />
+                  placeholder="Zip Code" />
+               <div className="text-center">
+
                   {feedBack}
-               </Form.Label>
-               <Button type="submit" className={`${page > 2 ? "hidden" : ""}`} variant={valid ? "success" : "primary"} disabled={!formData.zipcode}>{valid ? "Success" : "Check Zip"}</Button>
+               </div>
+            </Form.Label>
+         </Col>
+
+
+         <Row className="" >
+
+            <Col md={12} className="justify-content-center">
+
+               <Button type="submit" className={`${page > 2 || valid ? "hidden" : ""} `} variant={valid ? "success" : "primary"} disabled={!formData.zipcode}>{loading === true ? <Spinner animation="border " role="status"></Spinner> : "Check Zip"}</Button>
             </Col>
-         </Form>
-      </Row >
+         </Row>
+      </Form>
    )
 }
 

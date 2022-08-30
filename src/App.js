@@ -14,12 +14,12 @@ function App() {
       <Navigation />
       {/* <div style={{ minHeight: '100vh' }}> */}
       <Hero />
-      <SecondCTA />
+      {/* <SecondCTA /> */}
       {/* </div> */}
-      <Card style={{ padding: '1rem' }}>
+      {/* <Card style={{ padding: '1rem' }}>
 
         <BookNow />
-      </Card>
+      </Card> */}
       <Appointment />
       <Top3 />
       {/* <BookingForm /> */}

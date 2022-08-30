@@ -5,13 +5,17 @@ import Summary from "./Summary"
 
 import Button from 'react-bootstrap/Button';
 
+
 let urlChoice = { prod: 'https://back-end4.herokuapp.com', dev: 'http://localhost:3005' }
 
 const ProductDisplay = ({ formData }) => (
+
+
+
    <section>
       <Summary formData={formData} />
-      <form action={`${urlChoice.prod}/api/payment/create-checkout-session`} method="POST">
-         <Button type="submit">
+      <form action={`${urlChoice.prod}/api/payment/create-checkout-session`} method="POST" className="text-center">
+         <Button type="submit" >
             Checkout
          </Button>
       </form>

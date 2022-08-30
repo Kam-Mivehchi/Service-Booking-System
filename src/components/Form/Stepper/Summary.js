@@ -3,27 +3,25 @@ import Card from 'react-bootstrap/Card';
 
 import ListGroup from 'react-bootstrap/ListGroup';
 import dayjs from 'dayjs'
+import styled from 'styled-components'
 
 
+const StyledTitle = styled(Card.Title)`
+font-weight:bold;
+margin: 1rem auto 1rem auto ;
+font-size:1.5rem;
 
+`
+
+// TODO add edit options on date time adress and weight fields
 const Summary = ({ formData }) => { //{ nextStep, prevStep, userInfo, formData }
-   // const Proceed = e => {
-   //    e.preventDefault();
-   //    nextStep();
-   // }
-   // const goBack = e => {
-   //    e.preventDefault();
-   //    prevStep();
-   // }
-   // console.log(dayjs(formData).format("LT"),)
+
    return (
       <>
 
-         {/* <Card.Header>
 
-               Order Summary
-            </Card.Header> */}
          <Card.Body>
+            <StyledTitle className="text-center">Order Summary</StyledTitle>
             <ListGroup variant="flush" className="d-flex flex-row justify-content-around">
                <ListGroup.Item className="text-center border-0">
                   <h2>

@@ -1,16 +1,26 @@
 
-import React from 'react'
+import { useState } from 'react'
+import Spinner from 'react-bootstrap/Spinner'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import { axiosConfig } from '../../Utils/api'
 import axios from 'axios'
-const OrderDetails = ({ formData, setFormData, setPage, page }) => { //{ prevStep, nextStep, handleChange, orderInfo, handlePrice }
+import styled from 'styled-components'
+import Card from 'react-bootstrap/Card';
 
+const StyledTitle = styled(Card.Title)`
+font-weight:bold;
+margin: 1rem auto 1rem auto ;
+font-size:1.5rem;
+`
+const OrderDetails = ({ formData, setFormData, setPage, page }) => { //{ prevStep, nextStep, handleChange, orderInfo, handlePrice }
+   const [loading, setLoading] = useState(false)
    const newOrder = async (e) => {
       e.preventDefault();
 
       try {
+         setLoading(true)
          const new_order = await axios.post('/orders', {
             weight: formData.weight,
             date: formData.date,
@@ -19,6 +29,7 @@ const OrderDetails = ({ formData, setFormData, setPage, page }) => { //{ prevSte
             city: formData.city,
             state: formData.state,
             zip: formData.zipcode,
+            customer_id: formData.customer_id
          },
             axiosConfig
          )
@@ -30,20 +41,42 @@ const OrderDetails = ({ formData, setFormData, setPage, page }) => { //{ prevSte
          setPage(page + 1)
       } catch (err) {
          console.log(err)
+      } finally {
+         setLoading(false)
       }
    }
+   const updatePrice = async (e) => {
+      setFormData({
+         ...formData,
+         weight: e.target.value,
 
+      })
+      try {
+         const new_price = await axios.post('/price', {
+            zipcode: formData.zipcode,
+            weight: e.target.value,
+
+         },
+            axiosConfig
+         )
+         setFormData({
+            ...formData,
+            price: new_price.data
+         })
+         console.log(new_price)
+      } catch (err) {
+         console.log(err)
+      }
+
+   }
    return (
       <>
-
+         <StyledTitle>Order Details</StyledTitle>
          <Form onSubmit={newOrder}>
 
 
             <Form.Label as={Col} xs={12} >Weight
-               <Form.Range type="range" min="1" max="8" placeholder="" value={formData.weight} onChange={(e) => setFormData({
-                  ...formData,
-                  weight: e.target.value
-               })} required />
+               <Form.Range type="range" min="0" max="7" defaultValue={formData.weight} onChange={updatePrice} required />
 
             </Form.Label>
             <Form.Label as={Col} xs={12} >Pick Up Date
@@ -77,7 +110,11 @@ const OrderDetails = ({ formData, setFormData, setPage, page }) => { //{ prevSte
                })} defaultValue={formData.state} required />
             </Form.Label>
 
-            <Button type="submit" >Next</Button>
+            <Col md={12} className="justify-content-center d-flex">
+
+               <Button onClick={() => setPage(page - 1)} className={`${page === 0 || page > 2 ? "hidden" : ""}`}>{page !== 0 && page < 4 ? "Prev" : ""}</Button>
+               <Button type="submit" >{loading ? <Spinner animation="border " role="status"></Spinner> : "Next"}</Button>
+            </Col>
 
          </Form>
       </>
