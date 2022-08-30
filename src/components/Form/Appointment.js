@@ -6,17 +6,10 @@ import OrderDetails from './Stepper/Order_Details';
 import Stripe from './Stepper/Stripe';
 import Success from './Stepper/Success';
 import Price from './Stepper/Price';
-import Button from 'react-bootstrap/Button';
-import styled from 'styled-components'
 import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-const StyledTitle = styled(Card.Title)`
-font-weight:bold;
-margin: 1rem auto 2rem auto ;
-font-size:1.5rem;
-`
+
 const Appointment = () => {
    const [page, setPage] = useState(0);
 
@@ -38,22 +31,7 @@ const Appointment = () => {
       order_id: ''
    })
 
-   // const [onSubmit, setOnSubmit] = useState(() => { })
-   // const handleSubmit = (e) => {
-   //    e.preventDefault()
-   //    switch (page) {
-   //       case 0:
-   //          try {
-   //             const range = CheckRange(formData.zipcode)
 
-   //             setPage(page + 1)
-   //             return range(formData.zipcode);
-   //          } catch (error) {
-
-   //          }
-
-   //    }
-   // }
 
    const renderComponent = () => {
 

@@ -15,22 +15,11 @@ font-size:1.5rem;
 
 // TODO add edit options on date time adress and weight fields
 const Summary = ({ formData }) => { //{ nextStep, prevStep, userInfo, formData }
-   // const Proceed = e => {
-   //    e.preventDefault();
-   //    nextStep();
-   // }
-   // const goBack = e => {
-   //    e.preventDefault();
-   //    prevStep();
-   // }
-   // console.log(dayjs(formData).format("LT"),)
+
    return (
       <>
 
-         {/* <Card.Header>
 
-Order Summary
-</Card.Header> */}
          <Card.Body>
             <StyledTitle className="text-center">Order Summary</StyledTitle>
             <ListGroup variant="flush" className="d-flex flex-row justify-content-around">

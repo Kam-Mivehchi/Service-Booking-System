@@ -4,8 +4,7 @@ import React, { useState, useEffect } from "react";
 import Summary from "./Summary"
 
 import Button from 'react-bootstrap/Button';
-import axios from 'axios';
-import { axiosConfig } from '../../Utils/api'
+
 
 let urlChoice = { prod: 'https://back-end4.herokuapp.com', dev: 'http://localhost:3005' }
 
