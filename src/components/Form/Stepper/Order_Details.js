@@ -46,12 +46,9 @@ const OrderDetails = ({ formData, setFormData, setPage, page }) => { //{ prevSte
       }
    }
    const updatePrice = async (e) => {
-      setFormData({
-         ...formData,
-         weight: e.target.value,
 
-      })
       try {
+         console.log(e)
          const new_price = await axios.post('/price', {
             zipcode: formData.zipcode,
             weight: e.target.value,
@@ -61,6 +58,7 @@ const OrderDetails = ({ formData, setFormData, setPage, page }) => { //{ prevSte
          )
          setFormData({
             ...formData,
+            weight: e.target.value,
             price: new_price.data
          })
          console.log(new_price)
@@ -76,7 +74,7 @@ const OrderDetails = ({ formData, setFormData, setPage, page }) => { //{ prevSte
 
 
             <Form.Label as={Col} xs={12} >Weight
-               <Form.Range type="range" min="0" max="7" defaultValue={formData.weight} onChange={updatePrice} required />
+               <Form.Range type="range" min="0" max="7" onChange={updatePrice} required />
 
             </Form.Label>
             <Form.Label as={Col} xs={12} >Pick Up Date

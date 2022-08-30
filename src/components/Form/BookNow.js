@@ -26,7 +26,7 @@ export default class BookNow extends Component {
       customer_id: '',
       date: '',
       time: '',
-      weight: 1,
+      weight: "0",
       price: 350,
       address: '',
       city: '',
