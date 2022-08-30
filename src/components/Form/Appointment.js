@@ -9,6 +9,8 @@ import Price from './Stepper/Price';
 import Button from 'react-bootstrap/Button';
 import styled from 'styled-components'
 import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 const StyledTitle = styled(Card.Title)`
 font-weight:bold;
@@ -17,7 +19,7 @@ font-size:1.5rem;
 `
 const Appointment = () => {
    const [page, setPage] = useState(0);
-   const [loading, isLoading] = useState(true)
+
    const [formData, setFormData] = useState({
       zipcode: '',
       phone: '',
@@ -27,7 +29,7 @@ const Appointment = () => {
       customer_id: '',
       date: '',
       time: '',
-      weight: '1',
+      weight: '0',
       price: 350,
       address: '',
       city: '',
@@ -57,17 +59,37 @@ const Appointment = () => {
 
       switch (page) {
          case 0:
-            return <Zipcode formData={formData} setFormData={setFormData} page={page} setPage={setPage} />;
+            return (
+               <>
+                  <Zipcode formData={formData} setFormData={setFormData} page={page} setPage={setPage} />
+               </>
+            );
          case 1:
-            return <PersonalDetails formData={formData} setFormData={setFormData} page={page} setPage={setPage} />
+            return (
+               <>
+                  <PersonalDetails formData={formData} setFormData={setFormData} page={page} setPage={setPage} />
+               </>
+            )
          case 2:
-            return <OrderDetails formData={formData} setFormData={setFormData} page={page} setPage={setPage} />
+            return (
+               <>
+                  <OrderDetails formData={formData} setFormData={setFormData} page={page} setPage={setPage} />
+               </>
+            )
          // case 3:
          //    return <Summary formData={formData} setFormData={setFormData} />;
          case 3:
-            return <Stripe formData={formData} setFormData={setFormData} page={page} setPage={setPage} />
+            return (
+               <>
+                  <Stripe formData={formData} setFormData={setFormData} page={page} setPage={setPage} />
+               </>
+            )
          case 4:
-            return <Success formData={formData} setFormData={setFormData} />
+            return (
+               <>
+                  <Success formData={formData} setFormData={setFormData} />
+               </>
+            )
 
          default:
             return <Zipcode formData={formData} setFormData={setFormData} />;
@@ -75,15 +97,21 @@ const Appointment = () => {
    }
 
    return (
-      <Container className="p-5">
-         <Card style={{}} className="p-2" >
+      <Container className="p-5 position-relative" id="booking-form " style={{ transform: "translate(0,-70%)" }}>
+         <Card className="px-2 py-4"  >
+
+
 
             <Price price={formData.price} />
-
-
             {renderComponent()}
             {console.log(formData)}
-            <Button onClick={() => setPage(page - 1)} className={`${page === 0 || page > 3 ? "hidden" : ""}`}>{page !== 0 && page < 4 ? "Prev" : ""}</Button>
+            <Row>
+
+               {/* <Col md={12} className="justify-content-center d-flex">
+
+                  <Button onClick={() => setPage(page - 1)} className={`${page === 0 || page > 2 ? "hidden" : ""}`}>{page !== 0 && page < 4 ? "Prev" : ""}</Button>
+               </Col> */}
+            </Row>
             {/* <Button type="submit" className={`${page > 2 ? "hidden" : ""}`}>Next</Button> */}
 
          </Card>

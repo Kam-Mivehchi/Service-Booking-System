@@ -14,7 +14,7 @@ function App() {
       <Navigation />
       {/* <div style={{ minHeight: '100vh' }}> */}
       <Hero />
-      <SecondCTA />
+      {/* <SecondCTA /> */}
       {/* </div> */}
       {/* <Card style={{ padding: '1rem' }}>
 

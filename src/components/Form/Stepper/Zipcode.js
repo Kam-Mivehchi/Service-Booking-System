@@ -16,18 +16,24 @@ const Zipcode = ({ formData, setFormData, setPage, page }) => {
 
       try {
          setLoading(true)
-         const response = await axios.post('/checkRange', {
+         const response = await axios.post('/price', {
             zipcode: formData.zipcode,
+            weight: formData.weight
          },
             axiosConfig
          )
 
-         if (response.data.isValid === false) {
-            throw new Error("out of Range")
-         }
+         // if (response.data.alid === false) {
+         //    throw new Error("out of Range")
+         // }
+         console.log(response)
+         setFormData({
+            ...formData,
+            price: response.data
+         })
          setValid(true)
          setFeedBack(<small className="text-success ">
-            Your in luck, tell us a little about yourself
+            Your in Range! Tell us a little about yourself
          </small>)
          setTimeout(() => setPage(page + 1), 1000)
          // setPage(page + 1)
@@ -74,7 +80,7 @@ const Zipcode = ({ formData, setFormData, setPage, page }) => {
 
             <Col md={12} className="justify-content-center">
 
-               <Button type="submit" className={`${page > 2 ? "hidden" : ""} `} variant={valid ? "success" : "primary"} disabled={!formData.zipcode}>{loading ? <Spinner animation="border " role="status"></Spinner> : "Check Zip"}</Button>
+               <Button type="submit" className={`${page > 2 || valid ? "hidden" : ""} `} variant={valid ? "success" : "primary"} disabled={!formData.zipcode}>{loading === true ? <Spinner animation="border " role="status"></Spinner> : "Check Zip"}</Button>
             </Col>
          </Row>
       </Form>
