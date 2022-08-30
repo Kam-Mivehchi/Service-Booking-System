@@ -1,48 +1,54 @@
-import React from 'react'
-
+import { useState } from 'react'
+import Spinner from 'react-bootstrap/Spinner';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import { axiosConfig } from '../../Utils/api'
 import axios from 'axios'
 const PersonalDetails = ({ formData, setFormData, setPage, page }) => {  //{ prevStep, nextStep, setFormData({
-
+   const [loading, setLoading] = useState(false)
    const createUser = async (e) => {
       e.preventDefault();
       try {
          //add logic to check if user exists already
          //otherwise createUser
-
+         setLoading(true)
          const find_user = await axios.post('/customers/findUser', {
 
             phone: formData.phone,
          },
             axiosConfig
          )
-         console.log(find_user)
+         if (!find_user.data) throw new Error("No user with that phone number exists")
+         // console.log(find_user)
          setFormData({
             ...formData,
             customer_id: find_user.data
          })
       } catch (e) {
-         // console.log(e)
-         const create_user = await axios.post('/customers', {
-            Fname: formData.firstName,
-            Lname: formData.lastName,
-            phone: formData.phone,
-            email: formData.email
-         },
-            axiosConfig
-         )
+         console.log(e)
+         try {
 
-         setFormData({
-            ...formData,
-            data: create_user.customer_id
-         })
+            const create_user = await axios.post('/customers', {
+               Fname: formData.firstName,
+               Lname: formData.lastName,
+               phone: formData.phone,
+               email: formData.email
+            },
+               axiosConfig
+            )
+            console.log(create_user.data)
+            setFormData({
+               ...formData,
+               customer_id: create_user.data.id
+            })
+            setPage(page + 1)
+         } catch (e) {
+            console.log(e)
+         }
 
       } finally {
-         setPage(page + 1)
-
+         setLoading(false)
       }
    }
 
@@ -76,7 +82,7 @@ const PersonalDetails = ({ formData, setFormData, setPage, page }) => {  //{ pre
                })} defaultValue={formData.email} required />
             </Form.Label>
 
-            <Button type="submit" >Next</Button>
+            <Button type="submit" >{loading ? <Spinner animation="border " role="status"></Spinner> : "Next"}</Button>
             {/* className={`${page > 2 ? "hidden" : ""}`} variant={valid ? "success" : "primary"} disabled={!formData.zipcode}>{valid ? "Success" : "Check Zip"} */}
 
          </Form>

@@ -4,14 +4,43 @@ import React, { useState, useEffect } from "react";
 import Summary from "./Summary"
 
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
+import { axiosConfig } from '../../Utils/api'
 
 let urlChoice = { prod: 'https://back-end4.herokuapp.com', dev: 'http://localhost:3005' }
+const newOrder = async ({ formData, setFormData }) => {
+   // e.preventDefault();
 
+   try {
+      const new_order = await axios.post('/orders', {
+         weight: formData.weight,
+         date: formData.date,
+         time: formData.time,
+         address: formData.address,
+         city: formData.city,
+         state: formData.state,
+         zip: formData.zipcode,
+      },
+         axiosConfig
+      )
+      console.log(new_order.data.orderId)
+      setFormData({
+         ...formData,
+         order_id: new_order.data.orderId
+      })
+
+   } catch (err) {
+      console.log(err)
+   }
+}
 const ProductDisplay = ({ formData }) => (
+
+
+
    <section>
       <Summary formData={formData} />
       <form action={`${urlChoice.prod}/api/payment/create-checkout-session`} method="POST">
-         <Button type="submit">
+         <Button type="submit" onClick={newOrder}>
             Checkout
          </Button>
       </form>

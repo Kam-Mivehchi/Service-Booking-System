@@ -7,10 +7,17 @@ import Stripe from './Stepper/Stripe';
 import Success from './Stepper/Success';
 import Price from './Stepper/Price';
 import Button from 'react-bootstrap/Button';
+import styled from 'styled-components'
+import Card from 'react-bootstrap/Card';
 
+const StyledTitle = styled(Card.Title)`
+font-weight:bold;
+margin: 1rem auto 2rem auto ;
+font-size:1.5rem;
+`
 const Appointment = () => {
    const [page, setPage] = useState(0);
-
+   const [loading, isLoading] = useState(true)
    const [formData, setFormData] = useState({
       zipcode: '',
       phone: '',
@@ -20,7 +27,7 @@ const Appointment = () => {
       customer_id: '',
       date: '',
       time: '',
-      weight: 1,
+      weight: '1',
       price: 350,
       address: '',
       city: '',
@@ -47,6 +54,7 @@ const Appointment = () => {
    // }
 
    const renderComponent = () => {
+
       switch (page) {
          case 0:
             return <Zipcode formData={formData} setFormData={setFormData} page={page} setPage={setPage} />;
@@ -67,16 +75,18 @@ const Appointment = () => {
    }
 
    return (
-      <Container fluid="md">
-         <Price price={formData.price} />
+      <Container className="p-5">
+         <Card style={{}} className="p-2" >
+
+            <Price price={formData.price} />
 
 
+            {renderComponent()}
+            {console.log(formData)}
+            <Button onClick={() => setPage(page - 1)} className={`${page === 0 || page > 3 ? "hidden" : ""}`}>{page !== 0 && page < 4 ? "Prev" : ""}</Button>
+            {/* <Button type="submit" className={`${page > 2 ? "hidden" : ""}`}>Next</Button> */}
 
-         {renderComponent()}
-         {console.log(formData)}
-         <Button onClick={() => setPage(page - 1)} className={`${page === 0 || page > 3 ? "hidden" : ""}`}>{page !== 0 && page < 4 ? "Prev" : ""}</Button>
-         {/* <Button type="submit" className={`${page > 2 ? "hidden" : ""}`}>Next</Button> */}
-
+         </Card>
       </Container >
 
    )

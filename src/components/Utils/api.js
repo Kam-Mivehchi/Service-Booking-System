@@ -1,7 +1,7 @@
 
 let urlChoice = { prod: 'https://back-end4.herokuapp.com', dev: 'http://localhost:3005' }
 export let axiosConfig = {
-   baseURL: `${urlChoice.prod}/api`,
+   baseURL: `${urlChoice.dev}/api`,
    headers: {
       'Content-Type': 'application/json',
       "Access-Control-Allow-Origin": "*",
