@@ -4,17 +4,14 @@ import Spinner from 'react-bootstrap/Spinner'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
-import { axiosConfig } from '../../Utils/api'
+import { axiosConfig } from '../../../Utils/api'
 import axios from 'axios'
 import styled from 'styled-components'
 import Card from 'react-bootstrap/Card';
 import { useTheme } from '../../../Utils/ThemeContext'
+import { StyledTitle } from '../../../Utils/StyledComponents'
 
-const StyledTitle = styled(Card.Title)`
-font-weight:bold;
-margin: 1rem auto 1rem auto ;
-font-size:1.5rem;
-`
+
 const OrderDetails = ({ formData, setFormData, setPage, page }) => { //{ prevStep, nextStep, handleChange, orderInfo, handlePrice }
    const [loading, setLoading] = useState(false)
    const theme = useTheme();
@@ -72,7 +69,7 @@ const OrderDetails = ({ formData, setFormData, setPage, page }) => { //{ prevSte
    return (
       <>
          <StyledTitle>Order Details</StyledTitle>
-         <Form onSubmit={newOrder}>
+         <Form className="px-2" onSubmit={newOrder}>
 
 
             <Form.Label as={Col} xs={12} >Weight

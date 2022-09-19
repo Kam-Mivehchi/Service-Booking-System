@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
-import { axiosConfig } from '../../Utils/api'
+import { axiosConfig } from '../../../Utils/api'
 import Spinner from 'react-bootstrap/Spinner';
 import { useTheme } from '../../../Utils/ThemeContext'
 

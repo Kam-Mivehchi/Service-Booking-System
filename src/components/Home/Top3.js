@@ -2,11 +2,12 @@
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import styled from 'styled-components'
 import { useTheme } from '../../Utils/ThemeContext'
 import { FaHandHoldingMedical } from 'react-icons/fa'
 import { AiOutlineStock } from 'react-icons/ai'
 import { GiChemicalDrop } from 'react-icons/gi'
+import { FlexContainer } from '../../Utils/StyledComponents'
+
 const content = {
     title: "Why Hire Us?",
     services: [
@@ -20,14 +21,7 @@ const content = {
 }
 
 
-const FlexContainer = styled(Container)`
-display:flex;
-flex-direction: column;
-justify-items:center;
-align-items:center;
-text-align:center;
-width:50%;
-`
+
 const Top3 = () => {
     const theme = useTheme()
     return (
@@ -47,8 +41,10 @@ const Top3 = () => {
                         return (
                             <Col xs={12} md={6} style={{ marginBottom: "1.25rem" }}>
                                 <FlexContainer >
-
-                                    <h3 xs={12} md={6} lg={4} style={{ fontSize: '600%', color: theme.secondary }}>{item.icon}</h3>
+                                    <h3 xs={12} md={6} lg={4} style={{
+                                        fontSize: '600%', color: `${(item.service === "Growth" && theme.green) || (item.service === "Customized Solutions" && theme.secondary) || (item.service === "Convenience" && theme.blue)
+                                            }`
+                                    }}>{item.icon}</h3>
                                     <h2 xs={12} md={6} lg={4} style={{ fontWeight: '600', }}>{item.service}</h2>
                                     <p xs={12} md={6} lg={4}>{item.desc}</p>
                                 </FlexContainer>
