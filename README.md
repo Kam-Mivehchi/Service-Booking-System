@@ -1,5 +1,11 @@
 ## Service Booking System
 
+##Technology
++ React
++ Axios (mySQL/Express/Node backend)
++ Bootstrap
++ Styled Components
++ React Hooks
 ## Description
 
 Are you a business owner? Are you tired of answering the phone to fulfill every new order? With the service booking system a business owner in the service industry can reduce their phone traffic while increasing their total sales. By combining a node backend, sql server and react this application provides can provide a small business with a reliable booking tool that gathers information about a customer, their order and export that data for use in excel or google sheets. This is a work in progress as I plan to incorporate email confirmation for both user/business, and incorporate stripe payments to protect business owners against no shows. This example is aimed at businesses such as barbers, car detailing, landscaping, etc.
