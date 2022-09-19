@@ -1,12 +1,12 @@
-import React from 'react'
+
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import styled from 'styled-components'
+import { useTheme } from '../../contexts/Theme'
 import { FaHandHoldingMedical } from 'react-icons/fa'
 import { AiOutlineStock } from 'react-icons/ai'
 import { GiChemicalDrop } from 'react-icons/gi'
-import { useTheme } from '../../contexts/Theme'
 const content = {
     title: "Why Hire Us?",
     services: [
