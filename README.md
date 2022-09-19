@@ -7,8 +7,17 @@ Are you a business owner? Are you tired of answering the phone to fulfill every 
 
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/90432404/190966391-c71654a9-654a-4b55-80e6-21477423f1e1.png)
-![image](https://user-images.githubusercontent.com/90432404/190968464-87f9a7f3-cbef-4380-bb56-05aec8e4f57a.png)
 ![image](https://user-images.githubusercontent.com/90432404/190968500-962614e1-435c-48ea-9703-206193fdd7c8.png)
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/90432404/190968464-87f9a7f3-cbef-4380-bb56-05aec8e4f57a.png)
+
+
+
+## Contributions
+Contributors: Kamyar Mivehchi
+
+## Contact
+Email: mailto:kammivehchi@gmail.com 
+Linkedin: https://linkedin.com/kamyar-mivehchi
+Portfolio: https://kamyarmivehchi.com
 
 
