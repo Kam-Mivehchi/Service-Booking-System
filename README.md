@@ -1,6 +1,6 @@
 ## Service Booking System
 
-##Technology
+## Technology
 + React
 + Axios (mySQL/Express/Node backend)
 + Bootstrap
