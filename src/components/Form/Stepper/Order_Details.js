@@ -6,8 +6,6 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import { axiosConfig } from '../../../Utils/api'
 import axios from 'axios'
-import styled from 'styled-components'
-import Card from 'react-bootstrap/Card';
 import { useTheme } from '../../../Utils/ThemeContext'
 import { StyledTitle } from '../../../Utils/StyledComponents'
 
