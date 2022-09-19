@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme } from '../../contexts/Theme'
+import { useTheme } from '../../Utils/ThemeContext'
 import styled from 'styled-components'
 import Card from 'react-bootstrap/Card';
 import bgImage from "../../assets/heroo.jpg"
