@@ -9,7 +9,7 @@ import Price from './Stepper/Price';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 
-import { useTheme } from '../../contexts/Theme'
+import { useTheme } from '../../Utils/ThemeContext'
 import styled from 'styled-components'
 
 const ResponsiveCard = styled(Card)`

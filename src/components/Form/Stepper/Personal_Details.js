@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import { axiosConfig } from '../../Utils/api'
 import axios from 'axios'
 import styled from 'styled-components'
-import { useTheme } from '../../../contexts/Theme'
+import { useTheme } from '../../../Utils/ThemeContext'
 
 const StyledTitle = styled(Card.Title)`
 font-weight:bold;

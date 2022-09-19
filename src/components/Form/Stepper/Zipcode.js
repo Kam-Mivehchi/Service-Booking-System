@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { axiosConfig } from '../../Utils/api'
 import Spinner from 'react-bootstrap/Spinner';
-import { useTheme } from '../../../contexts/Theme'
+import { useTheme } from '../../../Utils/ThemeContext'
 
 const Zipcode = ({ formData, setFormData, setPage, page }) => {
    const [feedBack, setFeedBack] = useState(<small className="text-secondary ">Enter your zipcode to check if you are in our service area</small>)
