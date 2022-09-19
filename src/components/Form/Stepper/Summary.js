@@ -1,19 +1,13 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
-
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import dayjs from 'dayjs'
-import styled from 'styled-components'
 import { useTheme } from '../../../Utils/ThemeContext'
+import { StyledTitle } from '../../../Utils/StyledComponents'
 
 
-const StyledTitle = styled(Card.Title)`
-font-weight:bold;
-margin: 1rem auto 1rem auto ;
-font-size:1.5rem;
 
-`
 
 // TODO add edit options on date time adress and weight fields
 const Summary = ({ formData, page, setPage }) => { //{ nextStep, prevStep, userInfo, formData }

@@ -15,7 +15,9 @@ export function ThemeProvider({ children }) {
          secondary: '#EE6983',
          accent: '#FFF5E4',
          black: '#181818',
-         white: '#FFFFFF'
+         white: '#FFFFFF',
+         green: '#7FB77E',
+         blue: "#87A2FB"
       }
    }
 

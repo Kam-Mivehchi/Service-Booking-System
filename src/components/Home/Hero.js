@@ -1,31 +1,11 @@
 import React from 'react'
 import { useTheme } from '../../Utils/ThemeContext'
-import styled from 'styled-components'
+
 import Card from 'react-bootstrap/Card';
 import bgImage from "../../assets/heroo.jpg"
 // import Button from 'react-bootstrap/Button'
-const Overlay = styled(Card.ImgOverlay)`
-    background-color:	rgb(0,0,0,.50);
-    color:white;
-    text-align:center;
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:center;
-    gap:5px;
-`
-const Title = styled(Card.ImgOverlay)`
-    font-weight:bold;
-    font-size:2.75rem;
-    color:theme.accent;
+import { Overlay, Title } from '../../Utils/StyledComponents';
 
-`
-// const StyledButton = styled(Button)`
-//     font-weight:bold;
-//     padding:4px 30px;
-//     border-radius:30px;
-
-// `
 const content = {
     title: "Your Brand Here",
     tagline: "Booking platform built for the service industry.",

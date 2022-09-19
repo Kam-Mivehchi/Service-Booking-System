@@ -3,17 +3,13 @@ import Spinner from 'react-bootstrap/Spinner';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
-import { axiosConfig } from '../../Utils/api'
-import axios from 'axios'
-import styled from 'styled-components'
-import { useTheme } from '../../../Utils/ThemeContext'
 
-const StyledTitle = styled(Card.Title)`
-font-weight:bold;
-margin: 1rem auto 1rem auto ;
-font-size:1.5rem;
-`
+import { axiosConfig } from '../../../Utils/api'
+import axios from 'axios'
+
+import { useTheme } from '../../../Utils/ThemeContext'
+import { StyledTitle } from '../../../Utils/StyledComponents'
+
 const PersonalDetails = ({ formData, setFormData, setPage, page }) => {  //{ prevStep, nextStep, setFormData({
    const [loading, setLoading] = useState(false)
    const theme = useTheme();
@@ -66,15 +62,9 @@ const PersonalDetails = ({ formData, setFormData, setPage, page }) => {  //{ pre
    return (
       <>
          <StyledTitle> Contact Info</StyledTitle>
-         <Form onSubmit={createUser}>
+         <Form onSubmit={createUser} className="px-5 mx-md-5">
 
-            <Form.Label as={Col} xs={12} >Phone
-               <Form.Control type="tel" placeholder="Enter Phone #" minLength="10" maxLength="10" pattern="[0-9]*" value={formData.phone} onChange={(e) => setFormData({
-                  ...formData,
-                  phone: e.target.value
-               })} defaultValue={formData.phone} required />
-            </Form.Label>
-            <Form.Label as={Col} xs={12}>First Name
+            <Form.Label as={Col} xs={12} >First Name
                <Form.Control type="text" placeholder="First Name" value={formData.firstName} onChange={(e) => setFormData({
                   ...formData,
                   firstName: e.target.value
@@ -85,6 +75,12 @@ const PersonalDetails = ({ formData, setFormData, setPage, page }) => {  //{ pre
                   ...formData,
                   lastName: e.target.value
                })} defaultValue={formData.lastName} required />
+            </Form.Label>
+            <Form.Label as={Col} xs={12} >Phone
+               <Form.Control type="tel" placeholder="Enter Phone #" minLength="10" maxLength="10" pattern="[0-9]*" value={formData.phone} onChange={(e) => setFormData({
+                  ...formData,
+                  phone: e.target.value
+               })} defaultValue={formData.phone} required />
             </Form.Label>
             <Form.Label as={Col} xs={12} >Email
                <Form.Control type="email" placeholder="Enter Email" value={formData.email} onChange={(e) => setFormData({
