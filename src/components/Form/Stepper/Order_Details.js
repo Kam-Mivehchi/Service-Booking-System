@@ -8,6 +8,7 @@ import { axiosConfig } from '../../Utils/api'
 import axios from 'axios'
 import styled from 'styled-components'
 import Card from 'react-bootstrap/Card';
+import { useTheme } from '../../../contexts/Theme'
 
 const StyledTitle = styled(Card.Title)`
 font-weight:bold;
@@ -16,6 +17,7 @@ font-size:1.5rem;
 `
 const OrderDetails = ({ formData, setFormData, setPage, page }) => { //{ prevStep, nextStep, handleChange, orderInfo, handlePrice }
    const [loading, setLoading] = useState(false)
+   const theme = useTheme();
    const newOrder = async (e) => {
       e.preventDefault();
 
@@ -110,8 +112,8 @@ const OrderDetails = ({ formData, setFormData, setPage, page }) => { //{ prevSte
 
             <Col md={12} className="justify-content-center d-flex">
 
-               <Button onClick={() => setPage(page - 1)} className={`${page === 0 || page > 2 ? "hidden" : ""}`}>{page !== 0 && page < 4 ? "Prev" : ""}</Button>
-               <Button type="submit" >{loading ? <Spinner animation="border " role="status"></Spinner> : "Next"}</Button>
+               <Button onClick={() => setPage(page - 1)} className={`${page === 0 || page > 2 ? "hidden" : ""}`} style={{ backgroundColor: theme.secondary, color: theme.white, borderRadius: '12px', }}>{page !== 0 && page < 4 ? "Prev" : ""}</Button>
+               <Button type="submit" style={{ backgroundColor: theme.secondary, color: theme.white, borderRadius: '12px', }}>{loading ? <Spinner animation="border " role="status"></Spinner> : "Next"}</Button>
             </Col>
 
          </Form>

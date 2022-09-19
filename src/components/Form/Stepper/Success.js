@@ -2,7 +2,7 @@ import React from 'react'
 
 const Success = () => {  //{ userInfo, orderInfo }
    return (
-      <div>Congrats you are done with the form</div>
+      <div className='text-center text-success'>Congratulations, form has been submitted</div>
    )
 }
 

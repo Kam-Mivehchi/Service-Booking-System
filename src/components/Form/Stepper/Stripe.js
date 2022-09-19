@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import "./App.css";
 
+
 import Summary from "./Summary"
 
 import Button from 'react-bootstrap/Button';
@@ -15,7 +16,7 @@ const ProductDisplay = ({ formData }) => (
    <section>
       <Summary formData={formData} />
       <form action={`${urlChoice.prod}/api/payment/create-checkout-session`} method="POST" className="text-center">
-         <Button type="submit" >
+         <Button type="submit" style={{ backgroundColor: '#EE6983', color: 'white', borderRadius: '12px', }}>
             Checkout
          </Button>
       </form>

@@ -7,6 +7,8 @@ import Card from 'react-bootstrap/Card';
 import { axiosConfig } from '../../Utils/api'
 import axios from 'axios'
 import styled from 'styled-components'
+import { useTheme } from '../../../contexts/Theme'
+
 const StyledTitle = styled(Card.Title)`
 font-weight:bold;
 margin: 1rem auto 1rem auto ;
@@ -14,6 +16,8 @@ font-size:1.5rem;
 `
 const PersonalDetails = ({ formData, setFormData, setPage, page }) => {  //{ prevStep, nextStep, setFormData({
    const [loading, setLoading] = useState(false)
+   const theme = useTheme();
+
    const createUser = async (e) => {
       e.preventDefault();
       try {
@@ -88,10 +92,10 @@ const PersonalDetails = ({ formData, setFormData, setPage, page }) => {  //{ pre
                   email: e.target.value
                })} defaultValue={formData.email} required />
             </Form.Label>
-            <Col md={12} className="justify-content-center d-flex">
+            <Col md={12} className="justify-content-center d-flex gap-3">
 
-               <Button onClick={() => setPage(page - 1)} className={`${page === 0 || page > 2 ? "hidden" : ""}`}>{page !== 0 && page < 4 ? "Prev" : ""}</Button>
-               <Button type="submit" >{loading ? <Spinner animation="border " role="status"></Spinner> : "Next"}</Button>
+               <Button style={{ backgroundColor: theme.secondary, color: theme.white, borderRadius: '12px', }} onClick={() => setPage(page - 1)} className={`${page === 0 || page > 2 ? "hidden" : ""} `}>{page !== 0 && page < 4 ? "Prev" : ""}</Button>
+               <Button style={{ backgroundColor: theme.secondary, color: theme.white, borderRadius: '12px', }} type="submit" >{loading ? <Spinner animation="border " role="status"></Spinner> : "Next"}</Button>
             </Col>
             {/* className={`${page > 2 ? "hidden" : ""}`} variant={valid ? "success" : "primary"} disabled={!formData.zipcode}>{valid ? "Success" : "Check Zip"} */}
          </Form>

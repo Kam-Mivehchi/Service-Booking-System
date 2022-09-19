@@ -2,8 +2,10 @@ import React from 'react'
 import Card from 'react-bootstrap/Card';
 
 import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
 import dayjs from 'dayjs'
 import styled from 'styled-components'
+import { useTheme } from '../../../contexts/Theme'
 
 
 const StyledTitle = styled(Card.Title)`
@@ -14,8 +16,8 @@ font-size:1.5rem;
 `
 
 // TODO add edit options on date time adress and weight fields
-const Summary = ({ formData }) => { //{ nextStep, prevStep, userInfo, formData }
-
+const Summary = ({ formData, page, setPage }) => { //{ nextStep, prevStep, userInfo, formData }
+   const theme = useTheme()
    return (
       <>
 
@@ -25,7 +27,7 @@ const Summary = ({ formData }) => { //{ nextStep, prevStep, userInfo, formData }
             <ListGroup variant="flush" className="d-flex flex-row justify-content-around">
                <ListGroup.Item className="text-center border-0">
                   <h2>
-                     {formData.weight === 1 ? "<1 ton" : `${formData.weight} tons`}
+                     {formData.weight === '0' ? "<1 ton" : `${formData.weight} tons`}
                   </h2>
                   <small>Pick Up Size</small>
 
@@ -72,7 +74,9 @@ const Summary = ({ formData }) => { //{ nextStep, prevStep, userInfo, formData }
             </Card.Text>
          </Card.Body>
 
-
+         <Button type="submit" onClick={() => setPage(page + 1)} style={{ backgroundColor: theme.secondary, color: 'white', borderRadius: '12px', }}>
+            Checkout
+         </Button>
 
 
 

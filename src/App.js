@@ -1,3 +1,4 @@
+
 import './App.css';
 import Navigation from './components/Utils/Navigation';
 import Hero from './pages/Home/Hero';
@@ -6,25 +7,22 @@ import Footer from './components/Utils/Footer'
 import Top3 from './pages/Home/Top3'
 // import BookNow from './components/Form/BookNow'
 import Appointment from './components/Form/Appointment';
-// import Card from 'react-bootstrap/Card';
-//test
+import { ThemeProvider } from "./contexts/Theme"
+
+
+
+
+
 function App() {
   return (
-    <>
-      <Navigation />
-      {/* <div style={{ minHeight: '100vh' }}> */}
-      <Hero />
-      {/* <SecondCTA /> */}
-      {/* </div> */}
-      {/* <Card style={{ padding: '1rem' }}>
+    <ThemeProvider >
 
-        <BookNow />
-      </Card> */}
+      <Navigation />
+      <Hero />
       <Appointment />
       <Top3 />
-      {/* <BookingForm /> */}
-      <Footer />
-    </>
+
+    </ThemeProvider>
   );
 }
 

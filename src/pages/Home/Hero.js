@@ -1,9 +1,9 @@
 import React from 'react'
+import { useTheme } from '../../contexts/Theme'
 import styled from 'styled-components'
 import Card from 'react-bootstrap/Card';
-import bgImage from "../../assets/HeroImg.jpg"
+import bgImage from "../../assets/heroo.jpg"
 // import Button from 'react-bootstrap/Button'
-
 const Overlay = styled(Card.ImgOverlay)`
     background-color:	rgb(0,0,0,.50);
     color:white;
@@ -17,7 +17,7 @@ const Overlay = styled(Card.ImgOverlay)`
 const Title = styled(Card.ImgOverlay)`
     font-weight:bold;
     font-size:2.75rem;
-    color:white;
+    color:theme.accent;
 
 `
 // const StyledButton = styled(Button)`
@@ -27,19 +27,24 @@ const Title = styled(Card.ImgOverlay)`
 
 // `
 const content = {
-    title: "PB&J Dumpage",
-    tagline: "Big or Small, We Haul it All",
-    cta: "Book Online "
+    title: "Your Brand Here",
+    tagline: "Booking platform built for the service industry.",
+    cta: "Optimize your hair salon, landscaping business or car detailing service by allowing customers to book online",
 }
-const hero = () => {
+const Hero = () => {
+    const theme = useTheme()
+
     return (
-        <Card style={{ minHeight: '70vh' }} >
-            <Card.Img variant="top" src={bgImage} style={{ minHeight: '70vh', maxHeight: '70vh', objectFit: 'cover' }} />
-            <Overlay>
-                <Title as='h1' >{content.title}</Title>
-                <Card.Text as="h4"  >
+        <Card className="m-0 border-0" >
+            <Card.Img variant="top" src={bgImage} style={{ minHeight: '65vh', maxHeight: '65vh', objectFit: 'cover' }} />
+            <Overlay >
+                <Title as='h1' style={{ fontSize: "250%", color: theme.primary }}>{content.title}</Title>
+                <Card.Text as="h4" style={{ color: theme.secondary }}>
                     {content.tagline}
                 </Card.Text>
+                <Card.Subtitle style={{ color: theme.primary }}>
+                    {content.cta}
+                </Card.Subtitle>
                 {/* <StyledButton variant="success" href="#booking-form" style={{}}>{content.cta}</ StyledButton> */}
             </Overlay>
         </Card >
@@ -47,4 +52,4 @@ const hero = () => {
     )
 }
 
-export default hero
+export default Hero
