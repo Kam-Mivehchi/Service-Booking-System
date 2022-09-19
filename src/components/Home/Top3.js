@@ -27,14 +27,14 @@ const Top3 = () => {
     return (
 
         <Container className="m-0 p-0" style={{
-            backgroundColor: theme.primary, minWidth: '100%', transform: 'translateY(-3rem)'
+            backgroundColor: theme.primary, minWidth: '100vw', overflow: 'hidden', transform: 'translateY(-3rem)',
         }}>
             {/* //each represents either service oicon or desc; */}
             < h1 style={{
                 textAlign: "center", fontSize: "4rem", fontWeight: 'bold', margin: '2rem'
             }}> {content.title}</h1 >
 
-            < Row className="d-flex flex-wrap flex-column flex-md-row justify-content-md-center " >
+            < Row className="d-flex flex-wrap flex-column flex-md-row justify-content-md-center p-0 m-0" >
 
                 {
                     content.services.map((item) => {
