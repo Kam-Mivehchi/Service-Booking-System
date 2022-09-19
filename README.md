@@ -16,8 +16,8 @@ Are you a business owner? Are you tired of answering the phone to fulfill every 
 Contributors: Kamyar Mivehchi
 
 ## Contact
-Email: mailto:kammivehchi@gmail.com 
-Linkedin: https://linkedin.com/kamyar-mivehchi
-Portfolio: https://kamyarmivehchi.com
+Email: mailto:kammivehchi@gmail.com \n
+Linkedin: https://linkedin.com/kamyar-mivehchi\n
+Portfolio: https://kamyarmivehchi.com\n
 
 
