@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import bgImage from "../../assets/heroo.jpg"
 // import Button from 'react-bootstrap/Button'
 import { Overlay, Title } from '../../Utils/StyledComponents';
-import BookNow from '../Form/BookNow'
+
 const content = {
     title: "Your Brand Here",
     tagline: "Booking platform built for the service industry.",
