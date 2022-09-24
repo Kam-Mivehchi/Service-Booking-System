@@ -6,7 +6,7 @@ const Price = ({ price }) => {
         <>
 
 
-            <Col xs={12} className={"d-flex flex-column align-items-center "}>
+            <Col xs={12} className={"d-flex flex-column align-items-center text-black"}>
 
                 <p>
                     Service Starts at

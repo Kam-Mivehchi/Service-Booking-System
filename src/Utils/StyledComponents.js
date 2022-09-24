@@ -31,15 +31,17 @@ width:50%;
 export const ResponsiveCard = styled(Card)`
   width:80%;
   margin:0 auto;
-  transform: translate(0,-14rem); 
+  transform: translate(0,-7rem); 
   border: 3px solid theme.white; 
   border-radius: 12px; 
   background-color: theme.white;
   @media (min-width: 768px) {
   width:70%;
-  }
-  @media (min-width: 992px) {
+  
+}
+@media (min-width: 992px) {
   width:70%;
+  transform: translate(0,-10rem); 
   }
   @media (min-width: 992px) {
   width:40%;
