@@ -11,7 +11,7 @@ const Navigation = () => {
     return (
         <Navbar collapseOnSelect variant="light" expand="lg" sticky="top" className={'m-0 text-center '} style={{ backgroundColor: theme.primary }}>
             <Container className={''} style={{ color: theme.secondary, }}>
-                <Navbar.Brand href="/" style={{ color: theme.secondary, fontWeight: 'bold', fontSize: '150%' }}>Your Brand Here</Navbar.Brand>
+                <Navbar.Brand href="/" classname={''} style={{ color: theme.secondary, fontWeight: 'bold', fontSize: '150%', overflowX: 'visible' }}>Your Brand Here</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" className="" style={{ fontWeight: 'bold', }} />
                 <Navbar.Collapse id="responsive-navbar-nav" className="w-100 " >
                     <Nav className=" text-center w-100 justify-content-end" style={{ fontWeight: 'bold', }}>
