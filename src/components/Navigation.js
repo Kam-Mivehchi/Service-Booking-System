@@ -18,7 +18,7 @@ const Navigation = () => {
                         <Nav.Link href="/" >Home</Nav.Link>
                         <Nav.Link href="#link" disabled>About</Nav.Link>
                         <Nav.Link href="#link" disabled>Pricing</Nav.Link>
-                        <Nav.Link as={"Button"} size="sm" href="#booking-form" className={"px-3 h-50 my-auto py-lg-1 border-0"} style={{ borderRadius: '999px', backgroundColor: theme.secondary, color: theme.white, }}>Book Now!</Nav.Link>
+                        <Nav.Link as={Button} size="sm" href="#booking-form" className={"px-3 h-50 my-auto py-lg-1 border-0"} style={{ borderRadius: '999px', backgroundColor: theme.secondary, color: theme.white, }}>Book Now!</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
