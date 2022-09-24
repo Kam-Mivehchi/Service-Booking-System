@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import bgImage from "../../assets/heroo.jpg"
 // import Button from 'react-bootstrap/Button'
 import { Overlay, Title } from '../../Utils/StyledComponents';
-
+import BookNow from '../Form/BookNow'
 const content = {
     title: "Your Brand Here",
     tagline: "Booking platform built for the service industry.",
@@ -26,6 +26,7 @@ const Hero = () => {
                     {content.cta}
                 </Card.Subtitle>
                 {/* <StyledButton variant="success" href="#booking-form" style={{}}>{content.cta}</ StyledButton> */}
+
             </Overlay>
         </Card >
 
